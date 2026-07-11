@@ -98,4 +98,4 @@ Progetto sviluppato dal **Gruppo 4**:
 
 ## Licenza
 
-Progetto didattico a uso privato, sviluppato nell'ambito di un project work Boolean. Nessuna licenza open source è dichiarata nel repository.
+Progetto didattico a uso privato, sviluppato nell'ambito di un project work Boolean.
