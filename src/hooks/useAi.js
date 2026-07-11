@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { apiFetch } from '../utils/DB_utilities';
 
 function useAi(endpoint) {
@@ -25,7 +25,12 @@ function useAi(endpoint) {
         }
     };
 
-    return { sendMessage, data, loading, error };
+    const resetAI = useCallback(() => {
+        setData(null);
+        setError(null);
+    }, []);
+
+    return { sendMessage, data, loading, error, resetAI };
 }
 
 export default useAi;

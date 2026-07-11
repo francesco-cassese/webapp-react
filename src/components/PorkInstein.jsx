@@ -8,7 +8,7 @@ export function PorkInstein() {
     const [userMessage, setUserMessage] = useState('');
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
-    const { sendMessage, data, loading, error } = useAI('/ai/chat');
+    const { sendMessage, data, loading, error, resetAI } = useAI('/ai/chat');
 
     useEffect(() => {
 
@@ -16,8 +16,9 @@ export function PorkInstein() {
             console.log("Trovato redirect! Vado a:", data.redirect);
             navigate(data.redirect);
             setIsOpen(false);
+            resetAI();
         }
-    }, [data, navigate]);
+    }, [data, navigate, resetAI]);
 
     const handleSend = () => {
         if (!userMessage.trim()) return;
